@@ -7,23 +7,30 @@ public class Curso {
     private String grupo;
     private int creditos;
     private String jornada;
+    private String programa;
+    private String facultad;
     private Estudiante estudiante1;
     private Estudiante estudiante2;
     private Estudiante estudiante3;
     private Docente docente;
+    private Docente docenteAuxiliar;
 
 
-    public Curso(String nombre, int semestre, String grupo, int creditos, String jornada,
-                 Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3, Docente docente) {
+    public Curso(String nombre, int semestre, String grupo, int creditos, String jornada, String programa,
+                 String facultad, Estudiante estudiante1, Estudiante estudiante2, Estudiante estudiante3,
+                 Docente docente, Docente docenteAuxiliar) {
         this.nombre = nombre;
         this.semestre = semestre;
         this.grupo = grupo;
         this.creditos = creditos;
         this.jornada = jornada;
+        this.programa = programa;
+        this.facultad = facultad;
         this.estudiante1 = estudiante1;
         this.estudiante2 = estudiante2;
         this.estudiante3 = estudiante3;
         this.docente = docente;
+        this.docenteAuxiliar = docenteAuxiliar;
     }
 
     public String getNombre() {
@@ -66,6 +73,22 @@ public class Curso {
         this.jornada = jornada;
     }
 
+    public String getPrograma() {
+        return programa;
+    }
+
+    public void setPrograma(String programa) {
+        this.programa = programa;
+    }
+
+    public String getFacultad() {
+        return facultad;
+    }
+
+    public void setFacultad(String facultad) {
+        this.facultad = facultad;
+    }
+
     public Estudiante getEstudiante1() {
         return estudiante1;
     }
@@ -98,25 +121,48 @@ public class Curso {
         this.docente = docente;
     }
 
-    public void mostrarInformacionEstudiantes() {
-        String informacionEstudiante1 = getEstudiante1().obtenerInformacion();
-        String informacionEstudiante2 = getEstudiante2().obtenerInformacion();
-        String informacionEstudiante3 = getEstudiante3().obtenerInformacion();
+    public Docente getDocenteAuxiliar() {
+        return docenteAuxiliar;
+    }
+
+    public void setDocenteAuxiliar(Docente docenteAuxiliar) {
+        this.docenteAuxiliar = docenteAuxiliar;
+    }
+
+    public void mostrarInformacionEstudianteMayorEstatura() {
+        String informacionEstudiante1 = getEstudiante1().getEstatura();
+        String informacionEstudiante2 = getEstudiante2().getEstatura();
+        String informacionEstudiante3 = getEstudiante3().getEstatura();
         System.out.println("Informacion del estudiante 1: "+ informacionEstudiante1);
         System.out.println("Informacion del estudiante 2: "+ informacionEstudiante2);
         System.out.println("Informacion del estudiante 3: "+ informacionEstudiante3);
+
     }
 
-    public double obtenerPromedioCurso(){
+    public double calcularNotaDefinitivaCadaEstudiante(){
         double promedioEstudiante1 = 0.0;
         double promedioEstudiante2 = 0.0;
         double promedioEstudiante3 = 0.0;
-        double promedioCurso = 0.0;
+        double notaDefinitiva = 0.0;
         promedioEstudiante1 = getEstudiante1().calcularPromedio();
         promedioEstudiante2 = getEstudiante2().calcularPromedio();
         promedioEstudiante3 = getEstudiante3().calcularPromedio();
-        promedioCurso = (promedioEstudiante1+promedioEstudiante2+promedioEstudiante3)/3;
-        System.out.println("El promedio del curso es : " + promedioCurso);
-        return promedioCurso;
+        System.out.println("La nota definitiva del estudiante" + getNombre() + getApellido(), "es:"
+            + notaDefinitiva);
+        return notaDefinitiva;
+    }
+
+
+    public String obtenerEstudianteNota5Mayor4(){
+        double nota5Mayor4Estudiante1 = 0.0;
+        double nota5Mayor4Estudiante2 = 0.0;
+        double nota5Mayor4Estudiante3 = 0.0;
+        String obtenerInformacion = "";
+        nota5Mayor4Estudiante1 = getEstudiante1().mostrarNota5();
+        nota5Mayor4Estudiante2 = getEstudiante2().mostrarNota5();
+        nota5Mayor4Estudiante3 = getEstudiante3().mostrarNota5();
+
+       System.out.println("Los estudiantes con la nota 5 mayor a 4, son :" + getNombre() + getApellido());
+        return obtenerInformacion;
     }
 }

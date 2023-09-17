@@ -7,17 +7,27 @@ import co.edu.uniquindio.parcial_1.model.Estudiante;
 public class MainEjercicio1 {
     public static void main(String[] args) {
         Curso curso = inicializaDatosPrueba();
-        curso.mostrarInformacionEstudiantes();
-        curso.obtenerPromedioCurso();
+        curso.calcularNotaDefinitivaCadaEstudiante();
+        curso.mostrarInformacionEstudianteMayorEstatura();
+        curso.obtenerEstudianteNota5Mayor4();
+        curso.mostrarInformacionDocentes();
+        Docente.obtenerPromedioNotaMayorCurso;
     }
 
     public static Curso inicializaDatosPrueba() {
-        Estudiante estudiante1 = new Estudiante("Juan",20,"12121@",1,
-                2.0,3.0,5.0);
-        Estudiante estudiante2 = new Estudiante("Pedro",30,"12121@",3,
-                3.0,4.0,5.0);
-        Estudiante estudiante3 = new Estudiante("Ana",19,"12121@",4,
-                50,3.0,2.0);
+        Estudiante estudiante1 = new Estudiante("Juan","Jimenez","11 julio 2005",18,
+                "@12ds34", 3,"1,70 metros", 3.4, 4.0, 5.0, 2.8, 4.5;
+        Estudiante estudiante2 = new Estudiante("pedro","Castro","11 Enero 2007",16,
+                "@1er254", 4,"1,80 metros", "2.0", 2.0, 4.0, 2.9, 3.5;
+        Estudiante estudiante3 = new Estudiante("Maria","Diaz","26 julio 2005",18,
+                "@123564", 3,"1,70 metros", 3.4, 4.0, 5.0, 2.8, 4.5;
+        Estudiante estudiante4 = new Estudiante("Diego","Soto","23 Marzo 2005",18,
+                "@1256734", 3,"1,70 metros", 3.4, 4.0, 5.0, 2.8, 4.5;
+        Estudiante estudiante5 = new Estudiante("Luis","Duran","17 Agosto 2005",18,
+                "@122334", 3,"1,70 metros", 3.4, 4.0, 5.0, 2.8, 4.5;
+        ;
+        ;
+
         Docente docente = new Docente("Carlos", 30, "sdsd@");
         Curso curso = new Curso("Programacion1",2,"2N",3,"Nocturna",
                 estudiante1, estudiante2, estudiante3,docente);
